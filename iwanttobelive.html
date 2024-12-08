@@ -37,12 +37,27 @@
 
     <!-- Hidden Video -->
     <div class="hidden-video">
-        <iframe 
-            src="https://www.youtube.com/embed/A0Pi1BtajAU?autoplay=1" 
-            frameborder="0" 
-            allow="autoplay; encrypted-media" 
-            allowfullscreen>
+        <iframe id="youtube-player" 
+                frameborder="0" 
+                allow="autoplay; encrypted-media" 
+                allowfullscreen>
         </iframe>
     </div>
+
+    <script>
+        // Array of YouTube video URLs
+        const videoUrls = [
+            "https://www.youtube.com/embed/A0Pi1BtajAU?autoplay=1",
+            "https://www.youtube.com/embed/2jnCwbXaDhM?autoplay=1",
+            "https://www.youtube.com/embed/vjKMkbU80ik?autoplay=1"
+        ];
+
+        // Randomly select a video
+        const randomIndex = Math.floor(Math.random() * videoUrls.length);
+        const selectedVideoUrl = videoUrls[randomIndex];
+
+        // Set the iframe src to the selected video URL
+        document.getElementById('youtube-player').src = selectedVideoUrl;
+    </script>
 </body>
 </html>
